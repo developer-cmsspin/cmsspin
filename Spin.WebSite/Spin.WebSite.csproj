@@ -1,0 +1,104 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <PublishWithAspNetCoreTargetManifest>true</PublishWithAspNetCoreTargetManifest>
+    
+    <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
+    <RuntimeIdentifiers>centos.7-x64</RuntimeIdentifiers>
+    <EnableDefaultContentItems>false</EnableDefaultContentItems>
+    <Platforms>AnyCPU;x64</Platforms>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <!--Add Spin Publish with all file-->
+  <ItemGroup>
+    <Content Include="wwwroot/lib/**/*" CopyToOutputDirectory="Never" />
+    <Content Include="wwwroot/js/**/*" CopyToOutputDirectory="Always" />
+    <Content Include="wwwroot/img/**/*" CopyToOutputDirectory="Always" />
+    <Content Include="wwwroot/css/**/*" CopyToOutputDirectory="Always" />
+    <Content Include="wwwroot/spin-sys/**/*" CopyToOutputDirectory="Always" />
+    <Content Include="wwwroot/template/**/*" CopyToOutputDirectory="Always" />
+    <Content Include="wwwroot/extlib/**/*" CopyToOutputDirectory="Always" />
+    <Content Include="Spin/**/*.cshtml" CopyToOutputDirectory="Always" />
+    <Content Include="Spin/**/*.htm" CopyToOutputDirectory="Always" />
+    <Content Include="Spin/**/*.js" CopyToOutputDirectory="Always" />
+    <Content Include="Spin/**/*.css" CopyToOutputDirectory="Always" />
+    <Content Include="Spin/**/*.png" CopyToOutputDirectory="Always" />
+    <Content Include="Spin/**/*.jpg" CopyToOutputDirectory="Always" />
+    <Content Include="Spin/**/*.jpeg" CopyToOutputDirectory="Always" />
+    <Content Include="Spin/**/*.gif" CopyToOutputDirectory="Always" />
+    <Content Include="Spin/**/*.svg" CopyToOutputDirectory="Always" />
+    <Content Include="Spin/**/*.ttf" CopyToOutputDirectory="Always" />
+    <Content Include="Spin/**/*.woff" CopyToOutputDirectory="Always" />
+    <Content Include="Spin/**/*.eot" CopyToOutputDirectory="Always" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Spin\Module\Home\Api\NewFolder\**" />
+    <Content Remove="Spin\Module\Home\Api\NewFolder\**" />
+    <EmbeddedResource Remove="Spin\Module\Home\Api\NewFolder\**" />
+    <None Remove="Spin\Module\Home\Api\NewFolder\**" />
+    <Compile Remove="Spin\Module\Home\Core\BL\ApiVersionBL.cs" />
+    <Content Remove="Spin\Themes\SpinWeb\Module\Home\Site\Home\Index.cshtml" />
+    <Content Remove="Spin\Module\Home\Site\Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Spin\Module\Security\Admin\Views\Control\UserInformation.cshtml" />
+    <None Remove="Spin\Module\Security\Resource\css\controls.css" />
+    <None Remove="Spin\Themes\Shared\Generator\Controls\AutocompleteSpin.cshtml" />
+    <None Remove="Spin\Themes\Shared\Generator\Controls\FileSpinDetail.cshtml" />
+    <None Remove="Spin\Themes\Shared\Generator\Controls\ImageSpinDetail.cshtml" />
+    <None Remove="Spin\Themes\Shared\Generator\Controls\ImageSpinSelect.cshtml" />
+    <None Remove="Spin\Themes\Shared\Generator\Controls\TranslateLabelSpinField.cshtml" />
+    <None Remove="Spin\Themes\Shared\Generator\Controls\TranslateSpinField.cshtml" />
+    <None Remove="wwwroot\favicon.ico" />
+    <None Remove="wwwroot\js\BaseSpinBackAutocomplete.js" />
+    <None Remove="wwwroot\js\Generator\UploadControllerExtend.js" />
+    <None Remove="wwwroot\lib\rwdImage-maps\jquery.rwdImageMaps.js" />
+    <None Remove="wwwroot\lib\rwdImage-maps\jquery.rwdImageMaps.min.js" />
+    <None Remove="wwwroot\lib\ui-bootstrap4\template\carousel\carousel.htm" />
+    <None Remove="wwwroot\lib\ui-bootstrap4\template\carousel\carousel.htm.js" />
+    <None Remove="wwwroot\lib\ui-bootstrap4\template\carousel\slide.htm" />
+    <None Remove="wwwroot\lib\ui-bootstrap4\template\carousel\slide.htm.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="appsettings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="bower.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="bundleconfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="hosting.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wwwroot\favicon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Spin\Module\Security\Api\Controllers\" />
+    <Folder Include="Spin\Module\Security\Core\Control\" />
+    <Folder Include="wwwroot\img\" />
+    <Folder Include="wwwroot\lib\bootstrap-ui\misc\demo\" />
+    <Folder Include="wwwroot\lib\xzoom\example\magnific-popup\" />
+    <Folder Include="Spin\Module\Util\Api\Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Spin" Version="0.1.22-rc" />
+  </ItemGroup>
+  <!--End Add Spin Publish with all file-->
+</Project>
