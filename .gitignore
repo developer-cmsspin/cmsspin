@@ -329,3 +329,4 @@ ASALocalRun/
 .mfractor/
 .vs/Spin/DesignTimeBuild/.dtbcache
 .DS_Store
+appsettings.json

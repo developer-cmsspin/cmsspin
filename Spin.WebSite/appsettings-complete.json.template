@@ -1,0 +1,40 @@
+﻿{
+  "Logging": {
+    "IncludeScopes": false,
+    "LogLevel": {
+      "Default": "Warning"
+    }
+  },
+  "Log": {
+    "LogNameConnection": "SpinLog",
+    "Enabled": true,
+    "WriteConsole": true
+  },
+  "domain": "[DOMAIN]",
+  "AzureMedia": {
+    "ClientId": "",
+    "ClientSecret": "",
+    "DomainActiveDirectory": "",
+    "SubscriptionId": "",
+    "ResourceGroupName": "",
+    "AccountName": ""
+  },
+  "UseAzureStorage": "true",
+  "SpinStorage": "[BLOB ConnectionString]",
+  "UserBlob": "[BLOB Name]",
+  "PasswordBlob": "[BLOB Password]",
+  "PathStorage": "[Load path save information BLOB]",
+  "InternalSiteName": "projects",
+  "RulesExecute": false,
+  "ActiveRobots": false,
+  "ManagerSite": "[Domain Manager sites]",
+  "DebugMode": true,
+  "ConnectionStrings": {
+    "Spin": "[Database]",
+    "SpinLog": {
+      "ConnectionString": "[LogMongo]",
+      "TypeDataBase": "MongoDB"
+    }
+
+  }
+}

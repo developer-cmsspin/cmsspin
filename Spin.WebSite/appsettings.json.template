@@ -1,0 +1,13 @@
+﻿{
+  "Logging": {
+    "IncludeScopes": false,
+    "LogLevel": {
+      "Default": "Warning"
+    }
+  },
+  "UseAzureStorage": false,
+  "domain": "[Domain Name]",
+  "ConnectionStrings": {
+    "Spin": "[Database Name]"
+  }
+}
