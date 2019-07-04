@@ -1,26 +1,6 @@
-# THIS IS ONLY FOR THE gitattributes REPOSITORY.
-# Handle line endings automatically for files detected as text
-# and leave all files detected as binary untouched.
-*               text=auto
-
-#
-# The above will handle all files NOT found below
-#
-# These files are text and should be normalized (Convert crlf => lf)
-*.gitattributes text
-.gitignore      text
-*.md            text
-
-#
-# Exclude files from exporting
-#
-
-.gitattributes  export-ignore
-.gitignore      export-ignore
-
 static/* linguist-vendored
 # Auto detect text files and perform LF normalization
 # https://www.davidlaing.com/2012/09/19/customise-your-gitattributes-to-become-a-git-ninja/
 *    text=auto
 
-*.js text diff=csharp
+*.js text diff=javascript
