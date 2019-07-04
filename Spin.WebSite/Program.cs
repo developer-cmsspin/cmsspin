@@ -4,19 +4,19 @@ using Spin.Base.Helper.Base;
 
 namespace Spin.WebSite
 {
-    public class Program
+    /// <summary>
+    /// Program Init
+    /// </summary>
+    public class Program : SpinProgram<Startup>
     {
+        /// <summary>
+        /// Main Call
+        /// </summary>
+        /// <param name="args"></param>
         public static void Main(string[] args)
         {
-            //TODO:LIST Provider
-
-            SpinProgram Host = new SpinProgram();
-            Host.CreateWebHost<Startup>().Run();
+            CallMain(args);
         }
 
-        public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .Build();
     }
 }
