@@ -8,11 +8,21 @@
     this.SpinViewPage.AddTryStyle("/css/BaseSpinBackExtend-media.css");
 
     //Validate show configuration
-    bool ShowConfiguration = true;
+    bool ShowConfiguration = false;
+    if (ModuleCustom == "")
+    {
+        ShowConfiguration = this.SpinViewPage.Security.User.GroupUser.ShowConfigurationDashboard;
+    }
+    else
+    {
+        var InformationPermissionModule = this.SpinViewPage.Security.User.GroupUser.GroupPermissions.FirstOrDefault(a => a.Module == ModuleCustom && a.Show);
+        if (InformationPermissionModule != null)
+        {
+            ShowConfiguration = InformationPermissionModule.ShowConfiguration;
+        }
+    }
 
-    //TMP
-    SpinViewPage.AddJavaScript("/extlib/ui-bootstrap4/dist/ui-bootstrap.js", false, false, 0);
-    SpinViewPage.AddStyle("/extlib/ui-bootstrap4/dist/ui-bootstrap-csp.css", false, false, 0);
+
 
     this.SpinViewPage.AddAngularScripts();
 }
@@ -149,7 +159,7 @@
             </nav>
         </div>
 
-        @if (ShowConfiguration)
+        @if(ShowConfiguration)
         {
             <div class="mdl-layout__drawer-right drawer-rigth-configuration">
                 @await Html.SpinRenderActionAsync("Index", "Configuration", "Util", "Admin", new { ModuleName = ModuleCustom })

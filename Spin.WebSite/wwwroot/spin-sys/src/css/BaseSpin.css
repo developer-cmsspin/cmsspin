@@ -565,7 +565,7 @@ ul.pagination {
 
 .page-item:first-child .page-link,
 .page-item:last-child .page-link {
-    color: black;
+    
     font-size: 1.7em;
     padding-top: 0
 }
@@ -573,7 +573,7 @@ ul.pagination {
 .page-item.active .page-link {
     background-color: transparent;
     border-color: transparent;
-    color: #016084;
+    color: #fff;
     box-shadow: none;
 }
 

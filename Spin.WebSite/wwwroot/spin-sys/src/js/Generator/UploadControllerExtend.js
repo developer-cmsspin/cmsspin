@@ -356,7 +356,7 @@
             });
 
             element.find(".btn-add-location-geolocation").click(function(){
-                element.find('.list-geolocation-control').hide();
+                element.find('.content-list-geolocation').hide();
                 element.find('.add-geolocation-control').show();
             });
 
@@ -382,7 +382,7 @@
                 }
 
                 element.find('.add-geolocation-control').hide();
-                element.find('.list-geolocation-control').show();
+                element.find('.content-list-geolocation').show();
             });
 
             element.find('.remove-geolocation').click(function(){

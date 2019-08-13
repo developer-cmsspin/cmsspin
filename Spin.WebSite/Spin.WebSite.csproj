@@ -98,7 +98,7 @@
     <Folder Include="Spin\Module\Util\Api\Controllers\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Spin" Version="0.1.23-rc" />
+    <PackageReference Include="Spin" Version="0.1.24-rc" />
   </ItemGroup>
   <!--End Add Spin Publish with all file-->
 </Project>

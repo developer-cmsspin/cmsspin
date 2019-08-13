@@ -44,40 +44,43 @@
         </div>
         <div id="btnTranslate@(Model.Name)" class="btn-translate content-geolocation">
 
-
-            <div id="listGeolocation@(Model.Name)" class="list-geolocation-control">
-                <button class="geolocation-data item-default select-geolocation" ng-click="showGeolocation(null,'@(Model.Name)')">
-                    <div class="row no-gutters">
-                        <div class="col">
-                            Base
-                        </div>
-                    </div>
-                </button>
-                <div class="item-geolocation-additional" ng-repeat="itemData in @(Model.VariableParentName).spinGeolocation">
-                    <button title="{{itemData.place.name}}" class="geolocation-data item-{{itemData.place.code}}" ng-click="showGeolocation(itemData,'@(Model.Name)')">
-                        <div class="row no-gutters">
-                            <div class="col-12">
-                                {{itemData.place.code}}
-
+            <div id="contentListGeolocation@(Model.Name)" class="row no-gutters content-list-geolocation">
+                <div id="listGeolocation@(Model.Name)" class="col-11 list-geolocation-control">
+                    <div class="item-geolocation-additional">
+                        <button class="geolocation-data item-default select-geolocation" ng-click="showGeolocation(null,'@(Model.Name)')">
+                            <div class="row no-gutters">
+                                <div class="col">
+                                    Base
+                                </div>
                             </div>
-                        </div>
+                        </button>
+                    </div>
 
-                    </button>
-                    <div ng-click="removeGeolocation(@(Model.VariableParentName),itemData,@(Model.Name))" class="remove-geolocation">
-                        <i class="fas fa-times"></i>
+                    <div class="item-geolocation-additional" ng-repeat="itemData in @(Model.VariableParentName).spinGeolocation">
+                        <button title="{{itemData.place.name}}" class="geolocation-data item-{{itemData.place.code}}" ng-click="showGeolocation(itemData,'@(Model.Name)')">
+                            <div class="row no-gutters">
+                                <div class="col-12">
+                                    {{itemData.place.code}}
+
+                                </div>
+                            </div>
+
+                        </button>
+                        <div ng-click="removeGeolocation(@(Model.VariableParentName),itemData,@(Model.Name))" class="remove-geolocation">
+                            <i class="fas fa-times"></i>
+                        </div>
                     </div>
                 </div>
-
-
-                <button class="btn-add-location-geolocation" ng-click="showAddGeolocation()">
-                    <div class="row no-gutters">
-                        <div class="col">
-                            <i class="fas fa-plus-circle"></i>
+                <div class="col-1">
+                    <button class="btn-add-location-geolocation" ng-click="showAddGeolocation()">
+                        <div class="row no-gutters">
+                            <div class="col">
+                                <i class="fas fa-plus-circle"></i>
+                            </div>
                         </div>
-                    </div>
-                </button>
+                    </button>
+                </div>
             </div>
-
         </div>
     </div>
     <div class="base-geolocation txt-language item-geolocation">

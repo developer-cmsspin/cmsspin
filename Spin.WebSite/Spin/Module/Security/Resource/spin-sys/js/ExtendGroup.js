@@ -17,6 +17,7 @@ var ExtendAdminDetail = function ($scope, $http, $filter, $location) {
                 Control.find(".id").val(valuePermission.id);
                 Control.find(".show-check").prop( "checked", valuePermission.show );
                 Control.find(".edit-check").prop( "checked", valuePermission.edit );
+                Control.find(".configuration-check").prop( "checked", valuePermission.showConfiguration );
             });
         }
     };
@@ -35,8 +36,9 @@ var ExtendAdminDetail = function ($scope, $http, $filter, $location) {
             valuePermission.id = itemGroup.find(".id").val();
             valuePermission.show = itemGroup.find(".show-check").is(':checked');
             valuePermission.edit = itemGroup.find(".edit-check").is(':checked');
+            valuePermission.showConfiguration = itemGroup.find(".configuration-check").is(':checked');
 
-            if(valuePermission.show || valuePermission.edit || valuePermission.id != 0 ){
+            if(valuePermission.show || valuePermission.showConfiguration || valuePermission.edit || valuePermission.id != 0 ){
                 scope.entity.groupPermissions.push(valuePermission);
             }
         });
@@ -48,6 +50,14 @@ var ExtendAdminDetail = function ($scope, $http, $filter, $location) {
         var Control = $("#" + namecontent);
         if(Control.find(".edit-check").is(':checked')){
             Control.find(".show-check").prop( "checked", true );
+        }
+    }
+
+    $scope.validateConfiguration = function(namecontent)
+    {
+        var Control = $("#" + namecontent);
+        if(Control.find(".configuration-check").is(':checked')){
+            Control.find(".configuration-check").prop( "checked", true );
         }
     }
 
